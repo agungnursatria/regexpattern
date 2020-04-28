@@ -103,5 +103,5 @@ class RegexPattern {
       r'^(S?\$|\₩|Rp|\¥|\€|\₹|\₽|fr|R$|R)?[ ]?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?( ?(USD?|AUD|NZD|CAD|CHF|GBP|CNY|EUR|JPY|IDR|MXN|NOK|KRW|TRY|INR|RUB|BRL|ZAR|SGD|MYR))?$';
 
   /// Digit Only regex
-  static Pattern digitOnly = r'^\d{1,}$';
+  static Pattern digitOnly = r'^\d+$';
 }
