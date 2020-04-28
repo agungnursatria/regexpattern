@@ -1,7 +1,2 @@
-library regexpattern;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:regexpattern/src/regex_pattern.dart';
+export 'package:regexpattern/src/regex_validation.dart';
