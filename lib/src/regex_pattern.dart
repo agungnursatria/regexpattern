@@ -102,6 +102,9 @@ class RegexPattern {
   static Pattern currency =
       r'^(S?\$|\₩|Rp|\¥|\€|\₹|\₽|fr|R$|R)?[ ]?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?( ?(USD?|AUD|NZD|CAD|CHF|GBP|CNY|EUR|JPY|IDR|MXN|NOK|KRW|TRY|INR|RUB|BRL|ZAR|SGD|MYR))?$';
 
-  /// Digit Only regex
-  static Pattern digitOnly = r'^\d+$';
+  /// Numeric Only regex (No Whitespace & Symbols)
+  static Pattern numericOnly = r'^\d+$';
+
+  /// Alphabet Only regex (No Whitespace & Symbols)
+  static Pattern alphabetOnly = r'^[a-zA-Z]+$';
 }

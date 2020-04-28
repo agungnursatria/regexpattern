@@ -116,9 +116,13 @@ void main() {
       String s = 'Rp 1.234,56';
       expect(RegexValidation.hasMatch(s, RegexPattern.currency), true);
     });
-    test('Positive case: Digit Only', () {
+    test('Positive case: Numeric Only', () {
       String s = '12341234';
-      expect(RegexValidation.hasMatch(s, RegexPattern.digitOnly), true);
+      expect(RegexValidation.hasMatch(s, RegexPattern.numericOnly), true);
+    });
+    test('Positive case: Alphabet Only', () {
+      String s = 'abc';
+      expect(RegexValidation.hasMatch(s, RegexPattern.alphabetOnly), true);
     });
   });
 }
