@@ -1,3 +1,6 @@
+/// Strict Pattern
+/// Symbol ^ and $ in pattern is to make sure all the string value following the pattern
+/// Regex will return false if any of the character not following the pattern, even if using hasMatch function
 class RegexPattern {
   /// Hexadecimal regex
   static Pattern hexadecimal = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
