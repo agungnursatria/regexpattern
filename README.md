@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^0.1.0
+  regexpattern: ^0.1.1
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ Pattern image;
 Pattern audio;
 Pattern video;
 Pattern txt;
-Pattern document;
+Pattern doc;
 Pattern excel;
 Pattern ppt;
 Pattern apk;
