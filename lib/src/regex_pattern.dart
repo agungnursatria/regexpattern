@@ -36,7 +36,7 @@ class RegexPattern {
   static Pattern txt = r'.txt$';
 
   /// Document regex
-  static Pattern document = r'.(doc|docx)$';
+  static Pattern doc = r'.(doc|docx)$';
 
   /// Excel regex
   static Pattern excel = r'.(xls|xlsx)$';

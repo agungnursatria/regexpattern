@@ -41,7 +41,7 @@ void main() {
     });
     test('Positive case: Document Ms.Word', () {
       String s = 'test.docx';
-      expect(RegexValidation.hasMatch(s, RegexPattern.document), true);
+      expect(RegexValidation.hasMatch(s, RegexPattern.doc), true);
     });
     test('Positive case: Excel', () {
       String s = 'test.xlsx';
