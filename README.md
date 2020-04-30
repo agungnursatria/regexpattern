@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^0.2.2
+  regexpattern: ^0.2.3
 ```
 
 ## Usage

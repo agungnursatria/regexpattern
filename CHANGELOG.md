@@ -1,3 +1,7 @@
+## [0.2.3] - 04/30/2020
+
+* Add comment in regex_pattern.dart
+
 ## [0.2.2] - 04/30/2020
 
 * Add regex pattern password with allowed whitespace.
