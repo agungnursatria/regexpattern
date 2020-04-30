@@ -124,5 +124,45 @@ void main() {
       String s = 'abc';
       expect(RegexValidation.hasMatch(s, RegexPattern.alphabetOnly), true);
     });
+    test('Positive case: Password (Easy) (Letter Only)', () {
+      String s = 'abcdefgh';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+    });
+    test('Positive case: Password (Easy) (Number Only)', () {
+      String s = '12345678';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+    });
+    test('Positive case: Password (Easy) (Letter, Number, Symbol)', () {
+      String s = 't@st_123';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+    });
+    test('Positive case: Password (Normal 1) (1 Letter Only)', () {
+      String s = 'a1234567';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Normal 1) (1 Number Only)', () {
+      String s = 'testttt1';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Normal 1) (With Symbol)', () {
+      String s = 't@st_123';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Normal 2) (1 Letter Only)', () {
+      String s = 'a1234567';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Normal 2) (1 Number Only)', () {
+      String s = 'testttt1';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Normal 3)', () {
+      String s = 'Testttt1';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
+    test('Positive case: Password (Hard)', () {
+      String s = 'T@st_123';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    });
   });
 }

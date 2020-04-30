@@ -1,3 +1,7 @@
+## [0.2.0] - 04/30/2020
+
+* Add regex pattern password.
+
 ## [0.1.2] - 04/28/2020
 
 * Update license.

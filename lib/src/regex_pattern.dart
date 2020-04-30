@@ -2,8 +2,10 @@
 /// Symbol ^ and $ in pattern is to make sure all the string value following the pattern
 /// Regex will return false if any of the character not following the pattern, even if using hasMatch function
 class RegexPattern {
-  /// Hexadecimal regex
-  static Pattern hexadecimal = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
+  /// Username regex
+  /// Requires minimum 3 character
+  /// Allowing "_" and "." in middle of name
+  static Pattern username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
 
   /// Email regex
   static Pattern email =
@@ -19,6 +21,9 @@ class RegexPattern {
   /// Example: 05555555555, +555 5555555555, (+123) 5555555555, (555) 5555555555, +5555 5555555555
   static Pattern phone =
       r'^(0|\+|(\+[0-9]{2,4}|\(\+?[0-9]{2,4}\)) ?)([0-9]*|\d{2,4}-\d{2,4}(-\d{2,4})?)$';
+
+  /// Hexadecimal regex
+  static Pattern hexadecimal = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
 
   /// Image vector regex
   static Pattern vector = r'.(svg)$';
@@ -52,11 +57,6 @@ class RegexPattern {
 
   /// HTML regex
   static Pattern html = r'.html$';
-
-  /// Username regex
-  /// Requires minimum 3 character
-  /// Allowing "_" and "." in middle of name
-  static Pattern username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
 
   /// DateTime regex (UTC)
   /// Unformatted date time (UTC and Iso8601)
@@ -110,4 +110,34 @@ class RegexPattern {
 
   /// Alphabet Only regex (No Whitespace & Symbols)
   static Pattern alphabetOnly = r'^[a-zA-Z]+$';
+
+  /// Password (Easy) Regex
+  /// Allowing all character except 'whitespace'
+  /// Minimum character: 8
+  static Pattern passwordEasy = r'^\S{8,}$';
+
+  /// Password (Normal) Regex
+  /// Allowing all character except 'whitespace'
+  /// Must contains: 1 letter & 1 number
+  /// Minimum character: 8
+  static Pattern passwordNormal1 = r'^(?=.*[A-Za-z])(?=.*\d)\S{8,}$';
+
+  /// Password (Normal) Regex
+  /// Allowing LETTER and NUMBER only
+  /// Must contains: 1 letter & 1 number
+  /// Minimum character: 8
+  static Pattern passwordNormal2 = r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9]{8,}$';
+
+  /// Password (Normal) Regex
+  /// Allowing all character except 'whitespace'
+  /// Must contains: 1 uppercase letter, 1 lowecase letter & 1 number
+  /// Minimum character: 8
+  static Pattern passwordNormal3 = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)\S{8,}$';
+
+  /// Password (Hard) Regex
+  /// Allowing all character except 'whitespace'
+  /// Must contains: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
+  /// Minimum character: 8
+  static Pattern passwordHard =
+      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])\S{8,}$';
 }

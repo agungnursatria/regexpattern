@@ -1,6 +1,6 @@
 # RegexPattern
 
-Flutter list of regex pattern with purpose for string validation.
+Flutter collection of regex pattern with purpose for string validation.
 
 ## Getting Started
 
@@ -26,13 +26,14 @@ bool hasMatch = RegexValidation.hasMatch(<String>, <RegexPattern>);
 
 ### RegexPattern
 
-List of regex pattern used to validating data
+Collection of regex pattern used to validating data
 
 ```dart
-Pattern hexadecimal;
+Pattern username;
 Pattern email;
 Pattern url;
 Pattern phone;
+Pattern hexadecimal;
 Pattern vector;
 Pattern image;
 Pattern audio;
@@ -44,7 +45,6 @@ Pattern ppt;
 Pattern apk;
 Pattern pdf;
 Pattern html;
-Pattern username;
 Pattern basicDateTime; // Date time in UTC and Iso8601
 Pattern binary;
 Pattern md5;
@@ -59,4 +59,9 @@ Pattern passport;
 Pattern currency;
 Pattern numericOnly;
 Pattern alphabetOnly;
+Pattern passwordEasy;
+Pattern passwordNormal1;
+Pattern passwordNormal2;
+Pattern passwordNormal3;
+Pattern passwordHard;
 ```
