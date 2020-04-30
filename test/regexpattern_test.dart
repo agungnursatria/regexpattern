@@ -136,33 +136,75 @@ void main() {
       String s = 't@st_123';
       expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
     });
-    test('Positive case: Password (Normal 1) (1 Letter Only)', () {
+    test('Positive case: Password (Normal 1)', () {
       String s = 'a1234567';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
-    });
-    test('Positive case: Password (Normal 1) (1 Number Only)', () {
-      String s = 'testttt1';
       expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
     });
     test('Positive case: Password (Normal 1) (With Symbol)', () {
       String s = 't@st_123';
       expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
     });
-    test('Positive case: Password (Normal 2) (1 Letter Only)', () {
-      String s = 'a1234567';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
-    });
-    test('Positive case: Password (Normal 2) (1 Number Only)', () {
-      String s = 'testttt1';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+    test('Positive case: Password (Normal 2)', () {
+      String s = 'a1234s67';
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal2), true);
     });
     test('Positive case: Password (Normal 3)', () {
       String s = 'Testttt1';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal3), true);
     });
     test('Positive case: Password (Hard)', () {
       String s = 'T@st_123';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+      expect(RegexValidation.hasMatch(s, RegexPattern.passwordHard), true);
     });
+    test('Positive case: Password (Easy) (Allowed Whitespace)', () {
+      String s = 't@st_ 123';
+      expect(
+        RegexValidation.hasMatch(s, RegexPattern.passwordEasyAllowedWhitespace),
+        true,
+      );
+    });
+    test(
+      'Positive case: Password (Normal 1) (With Symbol) (Allowed Whitespace)',
+      () {
+        String s = 't@st_1 23';
+        expect(
+          RegexValidation.hasMatch(
+              s, RegexPattern.passwordNormal1AllowedWhitespace),
+          true,
+        );
+      },
+    );
+    test(
+      'Positive case: Password (Normal 2) (Allowed Whitespace)',
+      () {
+        String s = 'a123 4s67';
+        expect(
+          RegexValidation.hasMatch(
+              s, RegexPattern.passwordNormal2AllowedWhitespace),
+          true,
+        );
+      },
+    );
+    test('Positive case: Password (Normal 3)', () {
+      String s = 'Test ttt1';
+      expect(
+        RegexValidation.hasMatch(
+            s, RegexPattern.passwordNormal3AllowedWhitespace),
+        true,
+      );
+    });
+    test(
+      'Positive case: Password (Hard) (Allowed Whitespace)',
+      () {
+        String s = 'T@st_1 23';
+        expect(
+          RegexValidation.hasMatch(
+            s,
+            RegexPattern.passwordHardAllowedWhitespace,
+          ),
+          true,
+        );
+      },
+    );
   });
 }

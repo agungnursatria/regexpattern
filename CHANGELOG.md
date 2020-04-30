@@ -1,3 +1,7 @@
+## [0.2.2] - 04/30/2020
+
+* Add regex pattern password with allowed whitespace.
+
 ## [0.2.1] - 04/30/2020
 
 * Update readme.md.

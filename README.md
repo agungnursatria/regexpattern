@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^0.2.1
+  regexpattern: ^0.2.2
 ```
 
 ## Usage
@@ -64,4 +64,9 @@ Pattern passwordNormal1;
 Pattern passwordNormal2;
 Pattern passwordNormal3;
 Pattern passwordHard;
+Pattern passwordEasyAllowedWhitespace;
+Pattern passwordNormal1AllowedWhitespace;
+Pattern passwordNormal2AllowedWhitespace;
+Pattern passwordNormal3AllowedWhitespace;
+Pattern passwordHardAllowedWhitespace;
 ```
