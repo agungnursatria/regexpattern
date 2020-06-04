@@ -1,7 +1,7 @@
 /// Strict Pattern
 /// Symbol ^ and $ in pattern is to make sure all the string value following the pattern
 /// Regex will return false if any of the character not following the pattern, even if using hasMatch function
-/// Example: Pattern : Email -> 'This is your email : test@gmail.com' will return `false`, but 'test@gmail.com' will return `true`
+/// Example: Pattern : Email -> 'This is your email : test@gmailcom' will return `false`, but 'test@gmail.com' will return `true`
 class RegexPattern {
   /// Username regex
   /// Requires minimum 3 character
