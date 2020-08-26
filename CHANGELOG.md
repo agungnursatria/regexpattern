@@ -1,3 +1,8 @@
+## [1.0.0] - 08/26/2020
+
+- Rename RegexValidation to RegVal
+- Create String extension to simplify string matching to regex
+
 ## [0.2.4] - 08/26/2020
 
 - Fix URL Pattern to accept url from "Medium" website which having "@" on the url

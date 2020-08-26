@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^0.2.4
+  regexpattern: ^1.0.0
 ```
 
 ## Usage
@@ -26,6 +26,11 @@ import 'package:regexpattern/regexpattern.dart';
 
 ```dart
 bool hasMatch = RegexValidation.hasMatch(<String>, <RegexPattern>);
+
+or
+
+String text = 'https://google.com';
+bool isUrl = text.isUrl(); // text.is<Pattern>();
 ```
 
 ### RegexPattern

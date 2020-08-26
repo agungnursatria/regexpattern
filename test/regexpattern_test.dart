@@ -5,161 +5,161 @@ void main() {
   group('Positive Case', () {
     test('Positive case: Hexadecimal (3 character)', () {
       String s = '#12F';
-      expect(RegexValidation.hasMatch(s, RegexPattern.hexadecimal), true);
+      expect(s.isHex(), true);
     });
     test('Positive case: Hexadecimal (6 character)', () {
       String s = '#12FF52';
-      expect(RegexValidation.hasMatch(s, RegexPattern.hexadecimal), true);
+      expect(s.isHex(), true);
     });
     test('Positive case: Email', () {
       String s = 'yourn1823.ame@gmail123.com';
-      expect(RegexValidation.hasMatch(s, RegexPattern.email), true);
+      expect(s.isEmail(), true);
     });
     test('Positive case: URL', () {
       String s = 'https://google.com';
-      expect(RegexValidation.hasMatch(s, RegexPattern.url), true);
+      expect(s.isUrl(), true);
     });
     test('Positive case: Phone', () {
       String s = '(+12) 123123123';
-      expect(RegexValidation.hasMatch(s, RegexPattern.phone), true);
+      expect(s.isPhone(), true);
     });
     test('Positive case: Image', () {
       String s = 'test.jpg';
-      expect(RegexValidation.hasMatch(s, RegexPattern.image), true);
+      expect(s.isImage(), true);
     });
     test('Positive case: Audio', () {
       String s = 'test.mp3';
-      expect(RegexValidation.hasMatch(s, RegexPattern.audio), true);
+      expect(s.isAudio(), true);
     });
     test('Positive case: Video', () {
       String s = 'test.mp4';
-      expect(RegexValidation.hasMatch(s, RegexPattern.video), true);
+      expect(s.isVideo(), true);
     });
     test('Positive case: Txt', () {
       String s = 'test.txt';
-      expect(RegexValidation.hasMatch(s, RegexPattern.txt), true);
+      expect(s.isTxt(), true);
     });
     test('Positive case: Document Ms.Word', () {
       String s = 'test.docx';
-      expect(RegexValidation.hasMatch(s, RegexPattern.doc), true);
+      expect(s.isDoc(), true);
     });
     test('Positive case: Excel', () {
       String s = 'test.xlsx';
-      expect(RegexValidation.hasMatch(s, RegexPattern.excel), true);
+      expect(s.isExcel(), true);
     });
     test('Positive case: Powerpoint', () {
       String s = 'test.pptx';
-      expect(RegexValidation.hasMatch(s, RegexPattern.ppt), true);
+      expect(s.isPPT(), true);
     });
     test('Positive case: APK', () {
       String s = 'test.apk';
-      expect(RegexValidation.hasMatch(s, RegexPattern.apk), true);
+      expect(s.isApk(), true);
     });
     test('Positive case: PDF', () {
       String s = 'test.pdf';
-      expect(RegexValidation.hasMatch(s, RegexPattern.pdf), true);
+      expect(s.isPdf(), true);
     });
     test('Positive case: HTML', () {
       String s = 'test.html';
-      expect(RegexValidation.hasMatch(s, RegexPattern.html), true);
+      expect(s.isHtml(), true);
     });
     test('Positive case: Username', () {
       String s = 'noobmaster69';
-      expect(RegexValidation.hasMatch(s, RegexPattern.username), true);
+      expect(s.isUsername(), true);
     });
     test('Positive case: Date (UTC and iso8601)', () {
       String s = '2020-04-27T08:14:39.977';
-      expect(RegexValidation.hasMatch(s, RegexPattern.basicDateTime), true);
+      expect(s.isDateTimeUTC(), true);
     });
     test('Positive case: binary', () {
       String s = '1011';
-      expect(RegexValidation.hasMatch(s, RegexPattern.binary), true);
+      expect(s.isBinary(), true);
     });
     test('Positive case: MD5', () {
       String s = '3847820138564525205299f1f444c5ec';
-      expect(RegexValidation.hasMatch(s, RegexPattern.md5), true);
+      expect(s.isMD5(), true);
     });
     test('Positive case: SHA1', () {
       String s = '717de03c9158ae10675c659c2fe8b27b71d50073';
-      expect(RegexValidation.hasMatch(s, RegexPattern.sha1), true);
+      expect(s.isSHA1(), true);
     });
     test('Positive case: SHA256', () {
       String s =
           '6ab016eae79b6a14980adf361b551bfbff90d38f7490987e60a9590f2ffb37bc';
-      expect(RegexValidation.hasMatch(s, RegexPattern.sha256), true);
+      expect(s.isSHA256(), true);
     });
     test('Positive case: SSN (Social Security Number)', () {
       String s = '333-22-4444';
-      expect(RegexValidation.hasMatch(s, RegexPattern.ssn), true);
+      expect(s.isSSN(), true);
     });
     test('Positive case: IPv4', () {
       String s = '127.0.0.1';
-      expect(RegexValidation.hasMatch(s, RegexPattern.ipv4), true);
+      expect(s.isIPV4(), true);
     });
     test('Positive case: IPv6', () {
       String s = '2001:0db8:85a3:0000:0000:8a2e:0370:7334';
-      expect(RegexValidation.hasMatch(s, RegexPattern.ipv6), true);
+      expect(s.isIPV6(), true);
     });
     test('Positive case: ISBN', () {
       String s = 'ISBN-10 3-642-11746-5';
-      expect(RegexValidation.hasMatch(s, RegexPattern.isbn), true);
+      expect(s.isISBN(), true);
     });
     test('Positive case: Github Repository', () {
       String s = 'git@github.com:agungnursatria/regex_pattern.git';
-      expect(RegexValidation.hasMatch(s, RegexPattern.github), true);
+      expect(s.isGithub(), true);
     });
     test('Positive case: Passport', () {
       String s = 'A1234567';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passport), true);
+      expect(s.isPassport(), true);
     });
     test('Positive case: Currency', () {
       String s = 'Rp 1.234,56';
-      expect(RegexValidation.hasMatch(s, RegexPattern.currency), true);
+      expect(s.isCurrency(), true);
     });
     test('Positive case: Numeric Only', () {
       String s = '12341234';
-      expect(RegexValidation.hasMatch(s, RegexPattern.numericOnly), true);
+      expect(s.isNumeric(), true);
     });
     test('Positive case: Alphabet Only', () {
       String s = 'abc';
-      expect(RegexValidation.hasMatch(s, RegexPattern.alphabetOnly), true);
+      expect(s.isAlphabet(), true);
     });
     test('Positive case: Password (Easy) (Letter Only)', () {
       String s = 'abcdefgh';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+      expect(s.isPasswordEasy(), true);
     });
     test('Positive case: Password (Easy) (Number Only)', () {
       String s = '12345678';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+      expect(s.isPasswordEasy(), true);
     });
     test('Positive case: Password (Easy) (Letter, Number, Symbol)', () {
       String s = 't@st_123';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordEasy), true);
+      expect(s.isPasswordEasy(), true);
     });
     test('Positive case: Password (Normal 1)', () {
       String s = 'a1234567';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+      expect(s.isPasswordNormal1(), true);
     });
     test('Positive case: Password (Normal 1) (With Symbol)', () {
       String s = 't@st_123';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal1), true);
+      expect(s.isPasswordNormal1(), true);
     });
     test('Positive case: Password (Normal 2)', () {
       String s = 'a1234s67';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal2), true);
+      expect(s.isPasswordNormal2(), true);
     });
     test('Positive case: Password (Normal 3)', () {
       String s = 'Testttt1';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordNormal3), true);
+      expect(s.isPasswordNormal3(), true);
     });
     test('Positive case: Password (Hard)', () {
       String s = 'T@st_123';
-      expect(RegexValidation.hasMatch(s, RegexPattern.passwordHard), true);
+      expect(s.isPasswordHard(), true);
     });
     test('Positive case: Password (Easy) (Allowed Whitespace)', () {
       String s = 't@st_ 123';
       expect(
-        RegexValidation.hasMatch(s, RegexPattern.passwordEasyAllowedWhitespace),
+        s.isPasswordEasyWithspace(),
         true,
       );
     });
@@ -168,8 +168,7 @@ void main() {
       () {
         String s = 't@st_1 23';
         expect(
-          RegexValidation.hasMatch(
-              s, RegexPattern.passwordNormal1AllowedWhitespace),
+          s.isPasswordNormal1Withspace(),
           true,
         );
       },
@@ -179,8 +178,7 @@ void main() {
       () {
         String s = 'a123 4s67';
         expect(
-          RegexValidation.hasMatch(
-              s, RegexPattern.passwordNormal2AllowedWhitespace),
+          s.isPasswordNormal2Withspace(),
           true,
         );
       },
@@ -188,8 +186,7 @@ void main() {
     test('Positive case: Password (Normal 3)', () {
       String s = 'Test ttt1';
       expect(
-        RegexValidation.hasMatch(
-            s, RegexPattern.passwordNormal3AllowedWhitespace),
+        s.isPasswordNormal3Withspace(),
         true,
       );
     });
@@ -198,10 +195,7 @@ void main() {
       () {
         String s = 'T@st_1 23';
         expect(
-          RegexValidation.hasMatch(
-            s,
-            RegexPattern.passwordHardAllowedWhitespace,
-          ),
+          s.isPasswordHardWithspace(),
           true,
         );
       },

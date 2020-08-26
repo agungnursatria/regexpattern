@@ -27,8 +27,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    String url = 'https://google.com';
-    bool isMatch = RegexValidation.hasMatch(url, RegexPattern.url);
+    String text = 'https://google.com';
+    bool isMatch = text.isUrl();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'isUrl - $url: $isMatch',
+              'isUrl - $text: $isMatch',
             ),
           ],
         ),

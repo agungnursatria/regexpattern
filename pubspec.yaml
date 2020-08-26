@@ -1,10 +1,10 @@
 name: regexpattern
 description: Flutter list of regex pattern with purpose for string validation
-version: 0.2.4
+version: 1.0.0
 homepage: https://github.com/agungnursatria/regexpattern
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:
