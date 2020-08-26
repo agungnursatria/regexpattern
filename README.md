@@ -9,17 +9,21 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^0.2.3
+  regexpattern: ^0.2.4
 ```
 
 ## Usage
+
 #### Importing package
+
 ```dart
 import 'package:regexpattern/regexpattern.dart';
 ```
+
 #### Using RegexPattern
 
 #### Matching string to pattern
+
 ```dart
 bool hasMatch = RegexValidation.hasMatch(<String>, <RegexPattern>);
 ```
