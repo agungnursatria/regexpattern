@@ -1,6 +1,6 @@
 # RegexPattern
 
-Flutter collection of regex pattern with purpose for string validation.
+Flutter collection of regex pattern for string validation.
 
 ## Getting Started
 
