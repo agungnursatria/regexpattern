@@ -157,8 +157,4 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-<<<<<<< HEAD
-  dart: ">=2.12.0-0.0 <3.0.0"
-=======
   dart: ">=2.12.0 <3.0.0"
->>>>>>> 0ac4e70abc3470a0d965367489cd09495e8febd6
