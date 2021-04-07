@@ -1,3 +1,4 @@
+// ignore: avoid_classes_with_only_static_members
 /// Strict Pattern
 /// Symbol ^ and $ in pattern is to make sure all the string value following the pattern
 /// Regex will return false if any of the character not following the pattern, even if using hasMatch function
