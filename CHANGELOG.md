@@ -1,3 +1,7 @@
+## [2.0.0] - 09/25/2021
+
+- Migrate to null-safety
+
 ## [1.0.0] - 08/26/2020
 
 - Rename RegexValidation to RegVal
