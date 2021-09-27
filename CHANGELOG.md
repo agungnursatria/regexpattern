@@ -1,6 +1,7 @@
 ## [2.0.1] - 09/27/2021
 
 - Set RegVal.hasMatch variable nullable
+
 ## [2.0.0] - 09/25/2021
 
 - Migrate to null-safety
