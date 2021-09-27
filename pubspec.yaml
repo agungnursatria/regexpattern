@@ -1,6 +1,6 @@
 name: regexpattern
 description: Flutter list of regex pattern with purpose for string validation
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/agungnursatria/regexpattern
 
 environment:
