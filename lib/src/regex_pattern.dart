@@ -116,6 +116,12 @@ class RegexPattern {
   /// Alphabet Only regex (No Whitespace & Symbols)
   static String alphabetOnly = r'^[a-zA-Z]+$';
 
+  /// Alphabet & Numeric Only regex (No Whitespace & Symbols)
+  static String alphaNumericOnly = r'^[a-zA-Z0-9]+$';
+
+  /// Alphabet, Numeric, Symbol Only regex (No Whitespace & Symbols)
+  static String alphaNumericSymbolOnly = r'^[a-zA-Z0-9!@#$%^&*()-_+=]+$';
+
   /// Password (Easy) Regex
   /// Allowing all character except 'whitespace'
   /// Minimum character: 8

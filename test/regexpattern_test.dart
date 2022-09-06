@@ -124,6 +124,34 @@ void main() {
       String s = 'abc';
       expect(s.isAlphabet(), true);
     });
+    test('Positive case: Alphabet and Numeric Only', () {
+      String s = 'abc';
+      expect(s.isAlphabetNumeric(), true);
+    });
+    test('Positive case: Alphabet and Numeric Only', () {
+      String s = '123';
+      expect(s.isAlphabetNumeric(), true);
+    });
+    test('Positive case: Alphabet and Numeric Only', () {
+      String s = 'abc123';
+      expect(s.isAlphabetNumeric(), true);
+    });
+    test('Positive case: Alphabet, Numeric, Symbol Only', () {
+      String s = 'abc';
+      expect(s.isAlphabetNumericSymbol(), true);
+    });
+    test('Positive case: Alphabet, Numeric, Symbol Only', () {
+      String s = '123';
+      expect(s.isAlphabetNumericSymbol(), true);
+    });
+    test('Positive case: Alphabet, Numeric, Symbol Only', () {
+      String s = '!@#%^&';
+      expect(s.isAlphabetNumericSymbol(), true);
+    });
+    test('Positive case: Alphabet and Numeric Only', () {
+      String s = 'abc123!@#%^&';
+      expect(s.isAlphabetNumericSymbol(), true);
+    });
     test('Positive case: Password (Easy) (Letter Only)', () {
       String s = 'abcdefgh';
       expect(s.isPasswordEasy(), true);

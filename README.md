@@ -68,6 +68,8 @@ Pattern passport;
 Pattern currency;
 Pattern numericOnly;
 Pattern alphabetOnly;
+Pattern alphaNumericOnly;
+Pattern alphaNumericSymbolOnly;
 Pattern passwordEasy;
 Pattern passwordNormal1;
 Pattern passwordNormal2;

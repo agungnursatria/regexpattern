@@ -1,3 +1,7 @@
+## [2.1.0] - 09/06/2022
+
+- Add isAlphabetNumeric & alphaNumericSymbolOnly
+
 ## [2.0.1] - 09/27/2021
 
 - Set RegVal.hasMatch variable nullable

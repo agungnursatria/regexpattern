@@ -103,6 +103,14 @@ extension StringExtensions on String {
   /// Alphabet Only regex (No Whitespace & Symbols)
   bool isAlphabet() => RegVal.hasMatch(this, RegexPattern.alphabetOnly);
 
+  /// Alphabet & Numeric Only regex (No Whitespace & Symbols)
+  bool isAlphabetNumeric() =>
+      RegVal.hasMatch(this, RegexPattern.alphaNumericOnly);
+
+  /// Alphabet, Numeric, Symbol Only regex (No Whitespace & Symbols)
+  bool isAlphabetNumericSymbol() =>
+      RegVal.hasMatch(this, RegexPattern.alphaNumericSymbolOnly);
+
   /// Password (Easy) Regex
   /// Allowing all character except 'whitespace'
   /// Minimum character: 8
