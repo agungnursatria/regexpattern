@@ -19,6 +19,10 @@ void main() {
       String s = 'https://google.com';
       expect(s.isUrl(), true);
     });
+    test('Positive case: URL (local)', () {
+      String s = 'http://192.168.0.1:8080';
+      expect(s.isUrl(), true);
+    });
     test('Positive case: Phone', () {
       String s = '(+12) 123123123';
       expect(s.isPhone(), true);
