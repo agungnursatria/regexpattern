@@ -34,7 +34,7 @@ class RegexPattern {
   static String vector = r'.(svg)$';
 
   /// Image regex
-  static String image = r'.(jpeg|jpg|gif|png|bmp)$';
+  static String image = r'.(jpeg|jpg|gif|png|bmp|webp)$';
 
   /// Audio regex
   static String audio = r'.(mp3|wav|wma|amr|ogg)$';
