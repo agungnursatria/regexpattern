@@ -76,6 +76,9 @@ class RegexPattern {
   /// MD5 regex
   static String md5 = r'^[a-f0-9]{32}$';
 
+  /// CVV regex
+  static String cvv = r'^\d{3}$';
+
   /// SHA1 regex
   static String sha1 =
       r'(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})';

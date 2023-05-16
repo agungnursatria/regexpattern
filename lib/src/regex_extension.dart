@@ -70,6 +70,9 @@ extension StringExtensions on String {
   /// MD5 regex
   bool isMD5() => RegVal.hasMatch(this, RegexPattern.md5);
 
+  /// CVV regex
+  bool isCVV() => RegVal.hasMatch(this, RegexPattern.cvv);
+
   /// SHA1 regex
   bool isSHA1() => RegVal.hasMatch(this, RegexPattern.sha1);
 
