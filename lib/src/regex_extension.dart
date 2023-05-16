@@ -2,6 +2,7 @@ import 'package:regexpattern/regexpattern.dart';
 
 extension StringExtensions on String {
   /// Username regex
+  ///
   /// Requires minimum 3 character
   /// Allowing "_" and "." in middle of name
   bool isUsername() => RegVal.hasMatch(this, RegexPattern.username);
@@ -10,16 +11,24 @@ extension StringExtensions on String {
   bool isEmail() => RegVal.hasMatch(this, RegexPattern.email);
 
   /// URL regex
-  /// Eg:
+  ///
+  /// Examples:
   /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
   /// - https://www.youtube.com/watch?v=COYFmbVEH0k
   /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
   bool isUrl() => RegVal.hasMatch(this, RegexPattern.url);
 
   /// Phone Number regex
-  /// Must started by either, "0", "+", "+XX <X between 2 to 4 digit>", "(+XX <X between 2 to 3 digit>)"
-  /// Can add whitespace separating digit with "+" or "(+XX)"
-  /// Example: 05555555555, +555 5555555555, (+123) 5555555555, (555) 5555555555, +5555 5555555555
+  ///
+  /// Must be started either with "0", "+", "+XX <X between 2 to 4 digit>", or "(+XX <X between 2 to 3 digit>)"
+  /// It is possible to add whitespace separating digit with "+" or "(+XX)"
+  ///
+  /// Examples:
+  /// - 05555555555
+  /// - +555 5555555555
+  /// - (+123) 5555555555
+  /// - (555) 5555555555
+  /// - +5555 5555555555
   bool isPhone() => RegVal.hasMatch(this, RegexPattern.phone);
 
   /// Hexadecimal regex
@@ -59,9 +68,50 @@ extension StringExtensions on String {
   bool isHtml() => RegVal.hasMatch(this, RegexPattern.html);
 
   /// DateTime regex (UTC)
-  /// Unformatted date time (UTC and Iso8601)
-  /// Example: 2020-04-27 08:14:39.977, 2020-04-27T08:14:39.977, 2020-04-27 01:14:39.977Z
-  bool isDateTimeUTC() => RegVal.hasMatch(this, RegexPattern.basicDateTime);
+  ///
+  /// Valid Formats:
+  /// - YYYY-MM-DDTHH:mm:ss.ffffffZ
+  /// - YYYY-MM-DDTHH:mm:ss.ffffff
+  /// - YYYY-MM-DD HH:mm:ss.ffffffZ
+  /// - YYYY-MM-DD HH:mm:ss.ffffff
+  /// - YYYY-MM-DDTHH:mm:ss.fffZ
+  /// - YYYY-MM-DDTHH:mm:ss.fff
+  /// - YYYY-MM-DD HH:mm:ss.fffZ
+  /// - YYYY-MM-DD HH:mm:ss.fff
+  ///
+  /// Examples:
+  /// - 2020-04-27 08:14:39.977
+  /// - 2020-04-27T08:14:39.977
+  /// - 2020-04-27 01:14:39.977Z
+  /// - 2020-04-27 08:14:39
+  /// - 2020-04-27T08:14:39
+  /// - 2020-04-27 01:14:39Z
+  bool isDateTimeUTC() => RegVal.hasMatch(this, RegexPattern.dateTimeUTC);
+
+  /// Date Time regex
+  /// Return [true] to utc & common formatted date time.
+  ///
+  /// Valid Formats:
+  /// - All DateTime regex (UTC) valid examples
+  /// - many combination of `YYYY-MM-DD HH:mm:ss`
+  /// - HH:mm AM (or PM)
+  /// - MMMM yyyy
+  /// - MMM, d yyyy
+  /// - etc.
+  ///
+  /// Examples:
+  /// - 2018-01-04T05:52:34
+  /// - 2018-01-04
+  /// - 2018-01-04 05:52
+  /// - 01/Oct/04 01:23
+  /// - May 16, 2023
+  /// - 07:00 PM
+  /// - Wednesday, 21 May 2023
+  /// - 01/25
+  /// - 00:30:20
+  /// - Wed, Jan 26
+  /// - etc.
+  bool isDateTime() => RegVal.hasMatch(this, RegexPattern.dateTime);
 
   /// Binary regex
   /// Consist only 0 & 1
@@ -100,83 +150,89 @@ extension StringExtensions on String {
   /// Currency regex
   bool isCurrency() => RegVal.hasMatch(this, RegexPattern.currency);
 
-  /// Numeric Only regex (No Whitespace & Symbols)
+  /// Numeric Only regex
   bool isNumeric() => RegVal.hasMatch(this, RegexPattern.numericOnly);
 
-  /// Alphabet Only regex (No Whitespace & Symbols)
+  /// Alphabet Only regex
   bool isAlphabet() => RegVal.hasMatch(this, RegexPattern.alphabetOnly);
 
-  /// Alphabet & Numeric Only regex (No Whitespace & Symbols)
+  /// Alphabet & Numeric Only regex
   bool isAlphabetNumeric() =>
       RegVal.hasMatch(this, RegexPattern.alphaNumericOnly);
 
-  /// Alphabet, Numeric, Symbol Only regex (No Whitespace & Symbols)
+  /// Alphabet, Numeric, Symbol Only regex
   bool isAlphabetNumericSymbol() =>
       RegVal.hasMatch(this, RegexPattern.alphaNumericSymbolOnly);
 
   /// Password (Easy) Regex
-  /// Allowing all character except 'whitespace'
-  /// Minimum character: 8
+  ///
+  /// No whitespace allowed
+  /// Minimum characters: 8
   bool isPasswordEasy() => RegVal.hasMatch(this, RegexPattern.passwordEasy);
 
   /// Password (Easy) Regex
-  /// Allowing all character
-  /// Minimum character: 8
+  ///
+  /// Minimum characters: 8
   bool isPasswordEasyWithspace() =>
       RegVal.hasMatch(this, RegexPattern.passwordEasyAllowedWhitespace);
 
   /// Password (Normal) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal1() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal1);
 
   /// Password (Normal) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal1Withspace() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal1AllowedWhitespace);
 
   /// Password (Normal) Regex
-  /// Allowing LETTER and NUMBER only
+  ///
+  /// No symbolic characters allowed
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal2() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal2);
 
   /// Password (Normal) Regex
-  /// Allowing LETTER and NUMBER only
+  ///
+  /// No symbolic characters allowed
   /// Must contains: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal2Withspace() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal2AllowedWhitespace);
 
   /// Password (Normal) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal3() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal3);
 
   /// Password (Normal) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordNormal3Withspace() =>
       RegVal.hasMatch(this, RegexPattern.passwordNormal3AllowedWhitespace);
 
   /// Password (Hard) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordHard() => RegVal.hasMatch(this, RegexPattern.passwordHard);
 
   /// Password (Hard) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
-  /// Minimum character: 8
+  /// Minimum characters: 8
   bool isPasswordHardWithspace() =>
       RegVal.hasMatch(this, RegexPattern.passwordHardAllowedWhitespace);
 }

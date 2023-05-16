@@ -84,7 +84,7 @@ void main() {
     });
 
     test('Positive case: Date (UTC and iso8601)', () {
-      String s = '2020-04-27T08:14:39.977';
+      String s = '2023-05-16 15:20:45.170142Z';
       expect(s.isDateTimeUTC(), true);
     });
 

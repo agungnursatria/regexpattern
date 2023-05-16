@@ -4,8 +4,9 @@
 /// Example: Pattern : Email -> 'This is your email : test@gmail.com' will return `false`, but 'test@gmail.com' will return `true`
 class RegexPattern {
   /// Username regex
+  ///
   /// Requires minimum 3 character
-  /// Allowing "_" and "." in middle of name
+  /// Allow "_" and "." in middle of name
   static String username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
 
   /// Email regex
@@ -13,7 +14,8 @@ class RegexPattern {
       r'^[a-z0-9]+([-+._][a-z0-9]+){0,2}@.*?(\.(a(?:[cdefgilmnoqrstuwxz]|ero|(?:rp|si)a)|b(?:[abdefghijmnorstvwyz]iz)|c(?:[acdfghiklmnoruvxyz]|at|o(?:m|op))|d[ejkmoz]|e(?:[ceghrstu]|du)|f[ijkmor]|g(?:[abdefghilmnpqrstuwy]|ov)|h[kmnrtu]|i(?:[delmnoqrst]|n(?:fo|t))|j(?:[emop]|obs)|k[eghimnprwyz]|l[abcikrstuvy]|m(?:[acdeghklmnopqrstuvwxyz]|il|obi|useum)|n(?:[acefgilopruz]|ame|et)|o(?:m|rg)|p(?:[aefghklmnrstwy]|ro)|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|t(?:[cdfghjklmnoprtvwz]|(?:rav)?el)|u[agkmsyz]|v[aceginu]|w[fs]|y[etu]|z[amw])\b){1,2}$';
 
   /// URL regex
-  /// Eg:
+  ///
+  /// Examples:
   /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
   /// - https://www.youtube.com/watch?v=COYFmbVEH0k
   /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
@@ -21,9 +23,16 @@ class RegexPattern {
       r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-@]+))*$";
 
   /// Phone Number regex
-  /// Must started by either, "0", "+", "+XX <X between 2 to 4 digit>", "(+XX <X between 2 to 3 digit>)"
-  /// Can add whitespace separating digit with "+" or "(+XX)"
-  /// Example: 05555555555, +555 5555555555, (+123) 5555555555, (555) 5555555555, +5555 5555555555
+  ///
+  /// Must be started either with "0", "+", "+XX <X between 2 to 4 digit>", or "(+XX <X between 2 to 3 digit>)"
+  /// It is possible to add whitespace separating digit with "+" or "(+XX)"
+  ///
+  /// Examples:
+  /// - 05555555555
+  /// - +555 5555555555
+  /// - (+123) 5555555555
+  /// - (555) 5555555555
+  /// - +5555 5555555555
   static String phone =
       r'^(0|\+|(\+[0-9]{2,4}|\(\+?[0-9]{2,4}\)) ?)([0-9]*|\d{2,4}-\d{2,4}(-\d{2,4})?)$';
 
@@ -64,10 +73,52 @@ class RegexPattern {
   static String html = r'.html$';
 
   /// DateTime regex (UTC)
-  /// Unformatted date time (UTC and Iso8601)
-  /// Example: 2020-04-27 08:14:39.977, 2020-04-27T08:14:39.977, 2020-04-27 01:14:39.977Z
-  static String basicDateTime =
-      r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}.\d{3}Z?$';
+  ///
+  /// Valid Formats:
+  /// - YYYY-MM-DDTHH:mm:ss.ffffffZ
+  /// - YYYY-MM-DDTHH:mm:ss.ffffff
+  /// - YYYY-MM-DD HH:mm:ss.ffffffZ
+  /// - YYYY-MM-DD HH:mm:ss.ffffff
+  /// - YYYY-MM-DDTHH:mm:ss.fffZ
+  /// - YYYY-MM-DDTHH:mm:ss.fff
+  /// - YYYY-MM-DD HH:mm:ss.fffZ
+  /// - YYYY-MM-DD HH:mm:ss.fff
+  ///
+  /// Examples:
+  /// - 2020-04-27 08:14:39.977
+  /// - 2020-04-27T08:14:39.977
+  /// - 2020-04-27 01:14:39.977Z
+  /// - 2020-04-27 08:14:39
+  /// - 2020-04-27T08:14:39
+  /// - 2020-04-27 01:14:39Z
+  static String dateTimeUTC =
+      r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(.\d{3,})?[zZ]?$';
+
+  /// Date Time regex
+  /// Return [true] to utc & common formatted date time.
+  ///
+  /// Valid Formats:
+  /// - All DateTime regex (UTC) valid examples
+  /// - many combination of `YYYY-MM-DD HH:mm:ss`
+  /// - HH:mm AM (or PM)
+  /// - MMMM yyyy
+  /// - MMM, d yyyy
+  /// - etc.
+  ///
+  /// Examples:
+  /// - 2018-01-04T05:52:34
+  /// - 2018-01-04
+  /// - 2018-01-04 05:52
+  /// - 01/Oct/04 01:23
+  /// - May 16, 2023
+  /// - 07:00 PM
+  /// - Wednesday, 21 May 2023
+  /// - 01/25
+  /// - 00:30:20
+  /// - Wed, Jan 26
+  /// - etc.
+  static String dateTime =
+      r'^([a-zA-Z]{3,},? ?)?([0-9]{1,4}|[a-zA-Z]{3,})[ -\/\.,:]([0-9]{1,4}|[a-zA-Z]{3,})([ -\/\.,:] ?\w+)?([ T]\d{2}:\d{2}(:\d{2})?(\.\d{3,})?[zZ]?)?([aApP]\.?[mM])?$';
 
   /// Binary regex
   /// Consist only 0 & 1
@@ -113,78 +164,84 @@ class RegexPattern {
   static String currency =
       r'^(S?\$|\₩|Rp|\¥|\€|\₹|\₽|fr|R$|R)?[ ]?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?( ?(USD?|AUD|NZD|CAD|CHF|GBP|CNY|EUR|JPY|IDR|MXN|NOK|KRW|TRY|INR|RUB|BRL|ZAR|SGD|MYR))?$';
 
-  /// Numeric Only regex (No Whitespace & Symbols)
+  /// Numeric Only regex
   static String numericOnly = r'^\d+$';
 
-  /// Alphabet Only regex (No Whitespace & Symbols)
+  /// Alphabet Only regex
   static String alphabetOnly = r'^[a-zA-Z]+$';
 
-  /// Alphabet & Numeric Only regex (No Whitespace & Symbols)
+  /// Alphabet & Numeric Only regex
   static String alphaNumericOnly = r'^[a-zA-Z0-9]+$';
 
-  /// Alphabet, Numeric, Symbol Only regex (No Whitespace & Symbols)
+  /// Alphabet, Numeric, Symbol Only regex
   static String alphaNumericSymbolOnly = r'^[a-zA-Z0-9!@#$%^&*()-_+=]+$';
 
   /// Password (Easy) Regex
-  /// Allowing all character except 'whitespace'
-  /// Minimum character: 8
+  ///
+  /// No whitespace allowed
+  /// Minimum characters: 8
   static String passwordEasy = r'^\S{8,}$';
 
   /// Password (Easy) Regex
-  /// Allowing all character
-  /// Minimum character: 8
+  ///
+  /// Minimum characters: 8
   static String passwordEasyAllowedWhitespace = r'^[\S ]{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal1 = r'^(?=.*[A-Za-z])(?=.*\d)\S{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal1AllowedWhitespace =
       r'^(?=.*[A-Za-z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing LETTER and NUMBER only
+  ///
+  /// No symbolic characters allowed
   /// Must contains at least: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal2 = r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9]{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing LETTER and NUMBER only
+  ///
+  /// No symbolic characters allowed
   /// Must contains: 1 letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal2AllowedWhitespace =
       r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9 ]{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal3 = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)\S{8,}$';
 
   /// Password (Normal) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordNormal3AllowedWhitespace =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Hard) Regex
-  /// Allowing all character except 'whitespace'
+  ///
+  /// No whitespace allowed
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordHard =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])\S{8,}$';
 
   /// Password (Hard) Regex
-  /// Allowing all character
+  ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
-  /// Minimum character: 8
+  /// Minimum characters: 8
   static String passwordHardAllowedWhitespace =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
 }
