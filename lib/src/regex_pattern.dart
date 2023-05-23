@@ -168,11 +168,11 @@ class RegexPattern {
 
   /// SHA1 regex
   static String sha1 =
-      r'(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})';
+      r'^(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})$';
 
   /// SHA256 regex
   static String sha256 =
-      r'([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}';
+      r'^([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}$';
 
   /// SSN (Social Security Number) regex
   static String ssn =
@@ -187,11 +187,11 @@ class RegexPattern {
 
   /// ISBN 10 & 13 regex
   static String isbn =
-      r'(ISBN(\-1[03])?[:]?[ ]?)?(([0-9Xx][- ]?){13}|([0-9Xx][- ]?){10})';
+      r'^(ISBN(\-1[03])?[:]?[ ]?)?(([0-9Xx][- ]?){13}|([0-9Xx][- ]?){10})$';
 
   /// Github repository regex
   static String github =
-      r'((git|ssh|http(s)?)|(git@[\w\.]+))(:(\/\/)?)([\w\.@\:/\-~]+)(\.git)(\/)?';
+      r'^((git|ssh|http(s)?)|(git@[\w\.]+))(:(\/\/)?)([\w\.@\:/\-~]+)(\.git)(\/)?$';
 
   /// Passport No. regex
   static String passport = r'^(?!^0+$)[a-zA-Z0-9]{6,9}$';
