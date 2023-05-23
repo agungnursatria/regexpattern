@@ -14,8 +14,8 @@ class RegexPattern {
   ///
   /// May start with @
   /// Requires minimum 3 characters, maximum 30 characters
-  /// Allow aplhanumeric, "_" and "." characters
-  /// Must not start or end with "."
+  /// Allow aplhanumeric, underscore ("_") and dot (".") characters
+  /// Must not start or end with dot (".")
   static String usernameInstagram = r'^(?!.*\.\.)@?\w[\w\.]{1,28}\w$';
 
   /// Username (Discord) regex
