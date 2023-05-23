@@ -193,7 +193,7 @@ extension StringExtensions on String {
   ///
   /// Minimum characters: 8
   bool isPasswordEasyWithspace() =>
-      RegVal.hasMatch(this, RegexPattern.passwordEasyAllowedWhitespace);
+      RegVal.hasMatch(this, RegexPattern.passwordEasyWhitespace);
 
   /// Password (Normal) Regex
   ///
@@ -208,7 +208,7 @@ extension StringExtensions on String {
   /// Must contains at least: 1 letter & 1 number
   /// Minimum characters: 8
   bool isPasswordNormal1Withspace() =>
-      RegVal.hasMatch(this, RegexPattern.passwordNormal1AllowedWhitespace);
+      RegVal.hasMatch(this, RegexPattern.passwordNormal1Whitespace);
 
   /// Password (Normal) Regex
   ///
@@ -224,7 +224,7 @@ extension StringExtensions on String {
   /// Must contains: 1 letter & 1 number
   /// Minimum characters: 8
   bool isPasswordNormal2Withspace() =>
-      RegVal.hasMatch(this, RegexPattern.passwordNormal2AllowedWhitespace);
+      RegVal.hasMatch(this, RegexPattern.passwordNormal2Whitespace);
 
   /// Password (Normal) Regex
   ///
@@ -239,7 +239,7 @@ extension StringExtensions on String {
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
   /// Minimum characters: 8
   bool isPasswordNormal3Withspace() =>
-      RegVal.hasMatch(this, RegexPattern.passwordNormal3AllowedWhitespace);
+      RegVal.hasMatch(this, RegexPattern.passwordNormal3Whitespace);
 
   /// Password (Hard) Regex
   ///
@@ -253,5 +253,5 @@ extension StringExtensions on String {
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
   /// Minimum characters: 8
   bool isPasswordHardWithspace() =>
-      RegVal.hasMatch(this, RegexPattern.passwordHardAllowedWhitespace);
+      RegVal.hasMatch(this, RegexPattern.passwordHardWhitespace);
 }

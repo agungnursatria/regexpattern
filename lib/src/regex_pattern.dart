@@ -229,7 +229,7 @@ class RegexPattern {
   /// Password (Easy) Regex
   ///
   /// Minimum characters: 8
-  static String passwordEasyAllowedWhitespace = r'^[\S ]{8,}$';
+  static String passwordEasyWhitespace = r'^[\S ]{8,}$';
 
   /// Password (Normal) Regex
   ///
@@ -242,7 +242,7 @@ class RegexPattern {
   ///
   /// Must contains at least: 1 letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal1AllowedWhitespace =
+  static String passwordNormal1Whitespace =
       r'^(?=.*[A-Za-z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Normal) Regex
@@ -257,7 +257,7 @@ class RegexPattern {
   /// No symbolic characters allowed
   /// Must contains: 1 letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal2AllowedWhitespace =
+  static String passwordNormal2Whitespace =
       r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9 ]{8,}$';
 
   /// Password (Normal) Regex
@@ -271,7 +271,7 @@ class RegexPattern {
   ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal3AllowedWhitespace =
+  static String passwordNormal3Whitespace =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Hard) Regex
@@ -286,7 +286,7 @@ class RegexPattern {
   ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
   /// Minimum characters: 8
-  static String passwordHardAllowedWhitespace =
+  static String passwordHardWhitespace =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
 
   /// UUID
