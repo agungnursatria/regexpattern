@@ -5,13 +5,37 @@
 class RegexPattern {
   /// Username regex
   ///
-  /// Requires minimum 3 character
-  /// Allow "_" and "." in middle of name
-  static String username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
+  /// Requires minimum 3 characters
+  /// Allow "_" and "." in middle of name, but not side by side.
+  static String username =
+      r'^(?!.*[_\.]{2})@?[a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9]$';
+
+  /// Username (Instagram) regex
+  ///
+  /// May start with @
+  /// Requires minimum 3 characters, maximum 30 characters
+  /// Allow aplhanumeric, "_" and "." characters
+  /// Must not start or end with "."
+  static String usernameInstagram = r'^(?!.*\.\.)@?\w[\w\._]{1,28}\w$';
+
+  /// Username (Discord) regex
+  ///
+  /// Reference: https://discord.com/developers/docs/resources/user#usernames-and-nicknames
+  static String usernameDiscord =
+      r'^(?![@#:])(?!.*[`]{3})(?!.*discord)(?!here|everyone)[^_. ].{0,30}[^_. ]#[0-9]{4}$';
+
+  /// Username (Discord) regex
+  /// No Discrimintaor (Tag number -> #1234)
+  ///
+  /// Reference: https://discord.com/developers/docs/resources/user#usernames-and-nicknames
+  static String usernameDiscordNoDiscriminator =
+      r'^(?![@#:])(?!.*[`]{3})(?!.*discord)(?!here|everyone)[^_. ].{0,30}[^_. ]$';
 
   /// Email regex
+  ///
+  /// References: [RFC2822 Email Validation](https://regexr.com/2rhq7) by Tripleaxis
   static String email =
-      r'^[a-z0-9]+([-+._][a-z0-9]+){0,2}@.*?(\.(a(?:[cdefgilmnoqrstuwxz]|ero|(?:rp|si)a)|b(?:[abdefghijmnorstvwyz]iz)|c(?:[acdfghiklmnoruvxyz]|at|o(?:m|op))|d[ejkmoz]|e(?:[ceghrstu]|du)|f[ijkmor]|g(?:[abdefghilmnpqrstuwy]|ov)|h[kmnrtu]|i(?:[delmnoqrst]|n(?:fo|t))|j(?:[emop]|obs)|k[eghimnprwyz]|l[abcikrstuvy]|m(?:[acdeghklmnopqrstuvwxyz]|il|obi|useum)|n(?:[acefgilopruz]|ame|et)|o(?:m|rg)|p(?:[aefghklmnrstwy]|ro)|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|t(?:[cdfghjklmnoprtvwz]|(?:rav)?el)|u[agkmsyz]|v[aceginu]|w[fs]|y[etu]|z[amw])\b){1,2}$';
+      r"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";
 
   /// URL regex
   ///
@@ -19,8 +43,25 @@ class RegexPattern {
   /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
   /// - https://www.youtube.com/watch?v=COYFmbVEH0k
   /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
+  /// - http://192.168.0.1:8080
+  /// - https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
+  /// - http://a/b/c/d;p?q
+  /// - www.youtube.com
+  /// - stackoverflow.com
+  /// - twitter://
+  /// - fb://profile/33138223345
+  /// - mailto:John.Doe@example.com
+  /// - ldap://[2001:db8::7]/c=GB?objectClass?one
+  /// - tel:+1-816-555-1212
+  /// - telnet://192.0.2.16:80/
+  /// - news:comp.infosystems.www.servers.unix
+  /// - urn:oasis:names:specification:docbook:dtd:xml:4.1.2
+  ///
+  /// Reference:
+  /// https://datatracker.ietf.org/doc/html/rfc3986
+  /// https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
   static String url =
-      r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-@]+))*$";
+      r"^(?!.*[?@!&`()*+,;=_.\-~\]\[#]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]#]$)(?!.*[$]\$$)(?!.*[^\w:\])]:)(?:.*[\.:])(\w+:(\/\/)?)?([a-zA-Z0-9?@!&`()*+,;=_.\-~\/:?\[\]#])*\$?$";
 
   /// Phone Number regex
   ///
@@ -125,6 +166,8 @@ class RegexPattern {
   static String binary = r'^[0-1]*$';
 
   /// MD5 regex
+  ///
+  /// Reference: https://www.regextester.com/26
   static String md5 = r'^[a-f0-9]{32}$';
 
   /// CVV regex
@@ -174,7 +217,12 @@ class RegexPattern {
   static String alphaNumericOnly = r'^[a-zA-Z0-9]+$';
 
   /// Alphabet, Numeric, Symbol Only regex
+  @Deprecated('Use [noWhitespace] instead.')
   static String alphaNumericSymbolOnly = r'^[a-zA-Z0-9!@#$%^&*()-_+=]+$';
+
+  /// No Whitespace regex
+  /// Contains: Alphabet, Numeric, & Symbol
+  static String noWhitespace = r"^\S*$";
 
   /// Password (Easy) Regex
   ///
@@ -244,4 +292,22 @@ class RegexPattern {
   /// Minimum characters: 8
   static String passwordHardAllowedWhitespace =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
+
+  /// UUID
+  ///
+  /// Reference: https://ihateregex.io/expr/uuid/
+  static String uuid =
+      r'^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$';
+
+  /// Bitcoint Address
+  ///
+  /// References:
+  /// https://bitcoin.design/guide/glossary/address/
+  /// https://www.geeksforgeeks.org/regular-expression-to-validate-a-bitcoin-address/
+  static String bitcointAddress = r'^(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,34}$';
+
+  /// Ethereum Address
+  ///
+  /// Reference: https://www.regextester.com/99711
+  static String ethereumAddress = r'^0x[a-fA-F0-9]{40}$';
 }
