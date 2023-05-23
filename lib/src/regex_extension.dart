@@ -7,6 +7,25 @@ extension StringExtensions on String {
   /// Allowing "_" and "." in middle of name
   bool isUsername() => RegVal.hasMatch(this, RegexPattern.username);
 
+  /// Username (Instagram) regex
+  ///
+  /// May start with @
+  /// Requires minimum 3 characters, maximum 30 characters
+  /// Allow aplhanumeric, "_" and "." characters
+  /// Must not start or end with "."
+  bool isUsernameInstagram() => RegVal.hasMatch(
+        this,
+        RegexPattern.usernameInstagram,
+      );
+
+  /// Username (Discord) regex
+  ///
+  /// Reference: https://discord.com/developers/docs/resources/user#usernames-and-nicknames
+  bool isUsernameDiscord() => RegVal.hasMatch(
+        this,
+        RegexPattern.usernameDiscord,
+      );
+
   /// Email regex
   bool isEmail() => RegVal.hasMatch(this, RegexPattern.email);
 

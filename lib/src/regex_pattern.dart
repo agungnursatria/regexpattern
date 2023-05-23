@@ -22,14 +22,7 @@ class RegexPattern {
   ///
   /// Reference: https://discord.com/developers/docs/resources/user#usernames-and-nicknames
   static String usernameDiscord =
-      r'^(?![@#:])(?!.*[`]{3})(?!.*discord)(?!here|everyone)[^_. ].{0,30}[^_. ]#[0-9]{4}$';
-
-  /// Username (Discord) regex
-  /// No Discrimintaor (Tag number -> #1234)
-  ///
-  /// Reference: https://discord.com/developers/docs/resources/user#usernames-and-nicknames
-  static String usernameDiscordNoDiscriminator =
-      r'^(?![@#:])(?!.*[`]{3})(?!.*discord)(?!here|everyone)[^_. ].{0,30}[^_. ]$';
+      r'^(?!.*(discord|[`]{3}))(?!here|everyone).[^\#\@\:]{0,30}(#[0-9]{4})?$';
 
   /// Email regex
   ///
