@@ -210,8 +210,8 @@ class RegexPattern {
   static String alphaNumericOnly = r'^[a-zA-Z0-9]+$';
 
   /// Alphabet, Numeric, Symbol Only regex
-  @Deprecated('Use [noWhitespace] instead.')
-  static String alphaNumericSymbolOnly = r'^[a-zA-Z0-9!@#$%^&*()-_+=]+$';
+  static String alphaNumericSymbolOnly =
+      r'''^[a-zA-Z0-9!@#$%^&*()-_+=~{}:";',./|\\\[\]<>?]+$''';
 
   /// No Whitespace regex
   /// Contains: Alphabet, Numeric, & Symbol
