@@ -162,8 +162,6 @@ class RegexPattern {
   static String binary = r'^[0-1]*$';
 
   /// MD5 regex
-  ///
-  /// Reference: https://www.regextester.com/26
   static String md5 = r'^[a-f0-9]{32}$';
 
   /// CVV regex
@@ -295,12 +293,12 @@ class RegexPattern {
   static String uuid =
       r'^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$';
 
-  /// Bitcoint Address
+  /// Bitcoin Address
   ///
   /// References:
   /// https://bitcoin.design/guide/glossary/address/
   /// https://www.geeksforgeeks.org/regular-expression-to-validate-a-bitcoin-address/
-  static String bitcointAddress = r'^(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,34}$';
+  static String bitcoinAddress = r'^(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,34}$';
 
   /// Ethereum Address
   ///
