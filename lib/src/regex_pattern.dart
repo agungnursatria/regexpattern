@@ -97,8 +97,11 @@ class RegexPattern {
   /// PPT regex
   static String ppt = r'.(ppt|pptx)$';
 
-  /// Document regex
+  /// APK regex
   static String apk = r'.apk$';
+
+  /// IPA regex
+  static String ipa = r'.ipa$';
 
   /// PDF regex
   static String pdf = r'.pdf$';
