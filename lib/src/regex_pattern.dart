@@ -3,19 +3,38 @@
 /// Regex will return false if any of the character not following the pattern, even if using hasMatch function
 /// Example: Pattern : Email -> 'This is your email : test@gmail.com' will return `false`, but 'test@gmail.com' will return `true`
 class RegexPattern {
-  /// Username regex
+  /// Username regex (Simple)
   ///
-  /// Requires minimum 3 characters
-  /// Allow "_" and "." in middle of name, but not side by side.
-  static String username =
-      r'^(?!.*[_\.]{2})@?[a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9]$';
+  /// Minimum 3 character
+  /// Allowed to use underscore ("_") and period (".") characters in middle of name
+  static String username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
+
+  /// Username regex (v2)
+  ///
+  /// May start with @
+  /// Minimum 3 characters
+  /// Allowed to use aplhanumeric, underscore ("_"), dash ("-"), and period (".") characters.
+  /// Has only one symbols in a row.
+  /// Symbols can only be used in the middle of name.
+  static String usernameV2 =
+      r'^(?!.*[_\.\-]{2})@?[a-zA-Z0-9][a-zA-Z0-9_\.\-]+[a-zA-Z0-9]$';
+
+  /// Username (Google) regex
+  ///
+  /// Minimum 6 characters, maximum 30 characters
+  /// Contain letters (a-z), numbers (0-9), and period (.).
+  /// Must start and end with with letters or numbers.
+  /// Can't have consecutive period (.).
+  static String usernameGoogle =
+      r'^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]$';
 
   /// Username (Instagram) regex
   ///
   /// May start with @
-  /// Requires minimum 3 characters, maximum 30 characters
-  /// Allow aplhanumeric, underscore ("_") and dot (".") characters
-  /// Must not start or end with dot (".")
+  /// Minimum 3 characters, maximum 30 characters
+  /// Allowed to use aplhanumeric, underscore ("_") and period (".") characters
+  /// Can't start or end with period (".")
+  /// Can't have consecutive period (.).
   static String usernameInstagram = r'^(?!.*\.\.)@?\w[\w\.]{1,28}\w$';
 
   /// Username (Discord) regex

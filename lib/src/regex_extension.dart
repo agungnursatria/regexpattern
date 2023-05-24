@@ -3,17 +3,40 @@ import 'package:regexpattern/regexpattern.dart';
 extension StringExtensions on String {
   /// Username regex
   ///
-  /// Requires minimum 3 character
+  /// Minimum 3 characters
   /// Allowing "_" and "." in middle of name
   bool isUsername() => RegVal.hasMatch(
         this,
         RegexPattern.username,
       );
 
+  /// Username regex (v2)
+  ///
+  /// May start with @
+  /// Minimum 3 characterss
+  /// Allowed to use aplhanumeric, underscore ("_"), dash ("-"), and dot (".") characters.
+  /// Has only one symbols in a row.
+  /// Symbols can only be used in the middle of name.
+  bool isUsernameV2() => RegVal.hasMatch(
+        this,
+        RegexPattern.usernameV2,
+      );
+
+  /// Username (Google) regex
+  ///
+  /// Minimum 6 characters, maximum 30 characters
+  /// Contain letters (a-z), numbers (0-9), and periods (.).
+  /// Must start and end with with letters or numbers.
+  /// Can't have consecutive period (.).
+  bool isUsernameGoogle() => RegVal.hasMatch(
+        this,
+        RegexPattern.usernameGoogle,
+      );
+
   /// Username (Instagram) regex
   ///
   /// May start with @
-  /// Requires minimum 3 characters, maximum 30 characters
+  /// Minimum 3 characters, maximum 30 characters
   /// Allow aplhanumeric, "_" and "." characters
   /// Must not start or end with "."
   bool isUsernameInstagram() => RegVal.hasMatch(
