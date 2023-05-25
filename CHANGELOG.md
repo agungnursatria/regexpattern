@@ -1,3 +1,6 @@
+## [2.3.0] - 05/25/2023
+- Update environment sdk version
+
 ## [2.2.0] - 05/25/2023
 
 - Add usernameV2 pattern
