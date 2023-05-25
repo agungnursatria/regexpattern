@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^2.0.1
+  regexpattern: ^2.1.0
 ```
 
 ## Usage
@@ -39,6 +39,10 @@ Collection of regex pattern used to validating data
 
 ```dart
 Pattern username;
+Pattern usernameV2;
+Pattern usernameGoogle;
+Pattern usernameInstagram;
+Pattern usernameDiscord;
 Pattern email;
 Pattern url;
 Pattern phone;
@@ -54,7 +58,8 @@ Pattern ppt;
 Pattern apk;
 Pattern pdf;
 Pattern html;
-Pattern basicDateTime; // Date time in UTC and Iso8601
+Pattern dateTimeUTC;
+Pattern dateTime;
 Pattern binary;
 Pattern md5;
 Pattern sha1;
@@ -70,6 +75,7 @@ Pattern numericOnly;
 Pattern alphabetOnly;
 Pattern alphaNumericOnly;
 Pattern alphaNumericSymbolOnly;
+Pattern noWhitespace;
 Pattern passwordEasy;
 Pattern passwordNormal1;
 Pattern passwordNormal2;
@@ -80,6 +86,11 @@ Pattern passwordNormal1AllowedWhitespace;
 Pattern passwordNormal2AllowedWhitespace;
 Pattern passwordNormal3AllowedWhitespace;
 Pattern passwordHardAllowedWhitespace;
+Pattern uuid;
+Pattern bitcoinAddress;
+Pattern bitcoinTaprootAddress;
+Pattern bitcoinSegwitAddress;
+Pattern ethereumAddress;
 ```
 
 ## CONTRIBUTION

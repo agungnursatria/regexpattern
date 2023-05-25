@@ -1,3 +1,23 @@
+## [2.2.0] - 05/25/2023
+
+- Add usernameV2 pattern
+- Add usernameGoogle pattern
+- Add usernameInstagram pattern
+- Add usernameDiscord pattern
+- Update email pattern
+- Update url pattern
+- Add webp format to image pattern
+- Remove basicDateTime pattern
+- Add dateTimeUTC pattern
+- Add dateTime pattern
+- Add cvv pattern
+- Add noWhitespace pattern
+- Add uuid pattern
+- Add bitcoinAddress pattern
+- Add bitcoinTaprootAddress pattern
+- Add bitcoinSegwitAddress pattern
+- Add ethereumAddress pattern
+
 ## [2.1.0] - 09/06/2022
 
 - Add isAlphabetNumeric & alphaNumericSymbolOnly
