@@ -154,7 +154,7 @@ class RegexPattern {
   /// Return [true] to utc & common formatted date time.
   ///
   /// Valid Formats:
-  /// - All DateTime regex (UTC) valid examples
+  /// - All DateTime regex (UTC)
   /// - many combination of `YYYY-MM-DD HH:mm:ss`
   /// - HH:mm AM (or PM)
   /// - MMMM yyyy
@@ -307,8 +307,6 @@ class RegexPattern {
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
 
   /// UUID
-  ///
-  /// Reference: https://ihateregex.io/expr/uuid/
   static String uuid =
       r'^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$';
 
@@ -352,7 +350,5 @@ class RegexPattern {
   static String bitcoinSegwitAddress = r'^(bc1q)[a-zA-Z0-9]{38}$';
 
   /// Ethereum Address
-  ///
-  /// Reference: https://www.regextester.com/99711
   static String ethereumAddress = r'^0x[a-fA-F0-9]{40}$';
 }
