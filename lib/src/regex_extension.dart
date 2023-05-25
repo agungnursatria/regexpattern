@@ -435,12 +435,49 @@ extension StringExtensions on String {
 
   /// Bitcoin Address
   ///
+  /// Consist of 26-35 (42 on bc1) alphanumeric characters.
+  /// Starts with 1, 3, or bc1.
+  /// It contains digits in the range of 0 to 9.
+  /// The uppercase letter O and the uppercase letter I are not used to avoid visual ambiguity.
+  ///
   /// References:
   /// https://bitcoin.design/guide/glossary/address/
+  /// https://ihateregex.io/expr/bitcoin-address/
   /// https://www.geeksforgeeks.org/regular-expression-to-validate-a-bitcoin-address/
+  /// https://en.bitcoin.it/wiki/Invoice_address
   bool isBitcoinAddress() => RegVal.hasMatch(
         this,
         RegexPattern.bitcoinAddress,
+      );
+
+  /// Bitcoin (Taproot) Address
+  ///
+  /// Pay-to-Taproot (P2TR)
+  /// Invoice address format: Bech32m
+  /// 62 aplhanumeric characters, case insensitive
+  /// Starts with bc1p.
+  ///
+  /// References:
+  /// https://bitcoin.design/guide/glossary/address/
+  /// https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
+  bool isBitcoinTaprootAddress() => RegVal.hasMatch(
+        this,
+        RegexPattern.bitcoinTaprootAddress,
+      );
+
+  /// Bitcoin (Segwit) Address
+  ///
+  /// Pay-to-Witness-Public-Key-hash (P2WPKH)
+  /// Invoice address format: Bech32m
+  /// 42 aplhanumeric characters, case insensitive
+  /// Starts with bc1q.
+  ///
+  /// References:
+  /// https://bitcoin.design/guide/glossary/address/
+  /// https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
+  bool isBitcoinSegwitAddress() => RegVal.hasMatch(
+        this,
+        RegexPattern.bitcoinSegwitAddress,
       );
 
   /// Ethereum Address

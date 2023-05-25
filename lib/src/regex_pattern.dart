@@ -314,10 +314,42 @@ class RegexPattern {
 
   /// Bitcoin Address
   ///
+  /// Consist of 26-35 (42 on bc1) alphanumeric characters.
+  /// Starts with 1, 3, or bc1.
+  /// It contains digits in the range of 0 to 9.
+  /// The uppercase letter O and the uppercase letter I are not used to avoid visual ambiguity.
+  ///
   /// References:
   /// https://bitcoin.design/guide/glossary/address/
+  /// https://ihateregex.io/expr/bitcoin-address/
   /// https://www.geeksforgeeks.org/regular-expression-to-validate-a-bitcoin-address/
-  static String bitcoinAddress = r'^(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,34}$';
+  /// https://en.bitcoin.it/wiki/Invoice_address
+  static String bitcoinAddress =
+      r'^(?![13].{34,})(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,39}$';
+
+  /// Bitcoin (Taproot) Address
+  ///
+  /// Pay-to-Taproot (P2TR)
+  /// Invoice address format: Bech32m
+  /// 62 aplhanumeric characters, case insensitive
+  /// Starts with bc1p.
+  ///
+  /// References:
+  /// https://bitcoin.design/guide/glossary/address/
+  /// https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
+  static String bitcoinTaprootAddress = r'^(bc1p)[a-zA-Z0-9]{58}$';
+
+  /// Bitcoin (Segwit) Address
+  ///
+  /// Pay-to-Witness-Public-Key-hash (P2WPKH)
+  /// Invoice address format: Bech32m
+  /// 42 aplhanumeric characters, case insensitive
+  /// Starts with bc1q.
+  ///
+  /// References:
+  /// https://bitcoin.design/guide/glossary/address/
+  /// https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
+  static String bitcoinSegwitAddress = r'^(bc1q)[a-zA-Z0-9]{38}$';
 
   /// Ethereum Address
   ///
