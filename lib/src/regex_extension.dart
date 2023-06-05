@@ -68,8 +68,7 @@ extension StringExtensions on String {
   /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
   bool isUrl() => RegVal.hasMatch(this, RegexPattern.url);
 
-  /// URL (Advance) regex
-  /// Loosen URL regex to match more url patterns.
+  /// URI regex
   ///
   /// Examples:
   /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
@@ -78,8 +77,6 @@ extension StringExtensions on String {
   /// - http://192.168.0.1:8080
   /// - https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
   /// - http://a/b/c/d;p?q
-  /// - www.youtube.com
-  /// - stackoverflow.com
   /// - twitter://
   /// - fb://profile/33138223345
   /// - mailto:John.Doe@example.com
@@ -92,9 +89,9 @@ extension StringExtensions on String {
   /// Reference:
   /// https://datatracker.ietf.org/doc/html/rfc3986
   /// https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
-  bool isUrlAdvance() => RegVal.hasMatch(
+  bool isUri() => RegVal.hasMatch(
         this,
-        RegexPattern.urlAdvance,
+        RegexPattern.uri,
       );
 
   /// Phone Number regex
