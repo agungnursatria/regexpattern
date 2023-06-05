@@ -51,6 +51,16 @@ class RegexPattern {
 
   /// URL regex
   ///
+  /// Eg:
+  /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
+  /// - https://www.youtube.com/watch?v=COYFmbVEH0k
+  /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
+  static String url =
+      r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-@]+))*$";
+
+  /// URL (Advance) regex
+  /// Loosen URL regex to match more url patterns.
+  ///
   /// Examples:
   /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
   /// - https://www.youtube.com/watch?v=COYFmbVEH0k
@@ -72,8 +82,8 @@ class RegexPattern {
   /// Reference:
   /// https://datatracker.ietf.org/doc/html/rfc3986
   /// https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
-  static String url =
-      r"^(?!.*[?@!&`()*+,;=_.\-~\]\[#]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]#]$)(?!.*[$]\$$)(?!.*[^\w:\])]:)(?:.*[\.:])(\w+:(\/\/)?)?([a-zA-Z0-9?@!&`()*+,;=_.\-~\/:?\[\]#])*\$?$";
+  static String urlAdvance =
+      r"^(?!.*[?@!&`()*+,;=_.\-~\]\[#]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]#]$)(?!.*[^\w:\])]:)(?:.*[\.:])(\w+:(\/\/)?)?([a-zA-Z0-9?@!&`()*+,;=_.\-~\/:?\[\]#])*\$?$";
 
   /// Phone Number regex
   ///
