@@ -1,3 +1,6 @@
+## [2.5.0] - 06/05/2023
+- Rename urlAdvance pattern to uri
+
 ## [2.4.0] - 06/05/2023
 - Revert url pattern
 - Add urlAdvance pattern

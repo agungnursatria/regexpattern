@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  regexpattern: ^2.4.0
+  regexpattern: ^2.5.0
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ Pattern usernameInstagram;
 Pattern usernameDiscord;
 Pattern email;
 Pattern url;
-Pattern urlAdvance;
+Pattern uri;
 Pattern phone;
 Pattern hexadecimal;
 Pattern vector;
