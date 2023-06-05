@@ -1,3 +1,7 @@
+## [2.4.0] - 06/05/2023
+- Revert url pattern
+- Add urlAdvance pattern
+
 ## [2.3.0] - 05/25/2023
 - Update environment sdk version
 
