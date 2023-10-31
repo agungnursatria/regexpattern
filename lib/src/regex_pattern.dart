@@ -103,7 +103,7 @@ class RegexPattern {
   static String vector = r'.(svg)$';
 
   /// Image regex
-  static String image = r'.(jpeg|jpg|gif|png|bmp|webp)$';
+  static String image = r'.(jpeg|jpg|gif|png|bmp|webp|heic)$';
 
   /// Audio regex
   static String audio = r'.(mp3|wav|wma|amr|ogg)$';
