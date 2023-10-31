@@ -1,3 +1,6 @@
+## [2.6.0] - 10/31/2023
+- Add HEIC format to image pattern
+
 ## [2.5.0] - 06/05/2023
 - Rename urlAdvance pattern to uri
 
